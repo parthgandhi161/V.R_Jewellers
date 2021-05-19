@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane fx:id="mainpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1366.0" stylesheets="@dashboard.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.dashboardController.DashboardC">
+   <top>
+      <HBox alignment="CENTER_LEFT" style="-fx-background-color: WHITE;" BorderPane.alignment="CENTER">
+         <children>
+            <HBox maxWidth="-Infinity" prefWidth="150.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <ImageView fitHeight="84.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" styleClass="cursor_hand">
+                     <image>
+                        <Image url="@final-logo.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </ImageView>
+                  <Line endY="-18.0" startY="-100.0" strokeWidth="2.0" style="-fx-stroke: #F23B52;" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_RIGHT">
+               <children>
+                  <HBox alignment="CENTER_RIGHT" spacing="20.0">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="84.0" prefWidth="942.0" spacing="20.0">
+                           <children>
+                              <Label alignment="CENTER_RIGHT" style="-fx-font-family: quicksand; -fx-font-weight: bold; -fx-text-fill: #F23B52; -fx-font-size: 16;" text="Silver MCX :" />
+                              <Label fx:id="price" style="-fx-font-family: quicksand; -fx-font-weight: bold; -fx-font-size: 20; -fx-background-color: #77e03a;" text=". . . . . . . . ">
+                                 <padding>
+                                    <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+                                 </padding>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <ImageView fx:id="notification" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@bell-solid.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="settings" fitWidth="21.0" layoutX="1010.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@cog-solid.png" />
+                           </image>
+                        </ImageView>
+                        <Label style="-fx-font-family: quicksand; -fx-font-weight: bold; -fx-font-size: 20; -fx-text-fill: #F23B52;" text="V.R Jewellers" />
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+         </children>
+      </HBox>
+   </top>
+   <left>
+      <VBox alignment="TOP_CENTER" prefWidth="150.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+         <children>
+            <Line endX="50.0" startX="-100.0" strokeWidth="2.0" style="-fx-stroke: #F23B52;">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </Line>
+            <HBox fx:id="home" alignment="CENTER_LEFT" onMouseClicked="#showhome" spacing="13.0" styleClass="hover_border">
+               <children>
+                  <ImageView fitHeight="22.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@home-solid.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </ImageView>
+                  <Text fill="#f23b52" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="hover_font" text="Home" HBox.hgrow="ALWAYS">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Text>
+               </children>
+               <VBox.margin>
+                  <Insets top="30.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="7.0" left="10.0" top="7.0" />
+               </padding>
+            </HBox>
+            <HBox fx:id="dashboard" alignment="CENTER_LEFT" layoutX="10.0" layoutY="50.0" onMouseClicked="#showdashboard" spacing="13.0" styleClass="hover_border">
+               <children>
+                  <ImageView fitHeight="22.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@chart-line-solid.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </ImageView>
+                  <Text fill="#f23b52" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="hover_font" text="DashBoard" HBox.hgrow="ALWAYS">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Text>
+               </children>
+               <VBox.margin>
+                  <Insets top="15.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="7.0" left="10.0" top="7.0" />
+               </padding>
+            </HBox>
+            <HBox fx:id="orders" alignment="CENTER_LEFT" layoutX="10.0" layoutY="112.0" onMouseClicked="#showorders" spacing="13.0" styleClass="hover_border">
+               <children>
+                  <ImageView fitHeight="22.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@file-alt-solid.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="4.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <Text fill="#f23b52" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="hover_font" text="Orders" HBox.hgrow="ALWAYS">
+                     <HBox.margin>
+                        <Insets left="3.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Text>
+               </children>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="7.0" left="10.0" top="7.0" />
+               </padding>
+            </HBox>
+            <HBox fx:id="customers" alignment="CENTER_LEFT" layoutX="10.0" layoutY="174.0" onMouseClicked="#showcustomers" spacing="13.0" styleClass="hover_border">
+               <children>
+                  <ImageView fitHeight="22.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@users-solid.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </ImageView>
+                  <Text fill="#f23b52" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="hover_font" text="Customers" HBox.hgrow="ALWAYS">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Text>
+               </children>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="7.0" left="10.0" top="7.0" />
+               </padding>
+            </HBox>
+            <HBox fx:id="products" alignment="CENTER_LEFT" layoutX="10.0" layoutY="236.0" onMouseClicked="#showproducts" spacing="13.0" styleClass="hover_border">
+               <children>
+                  <ImageView fitHeight="22.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@iconmonstr-product-3.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="2.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <Text fill="#f23b52" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="hover_font" text="Products" HBox.hgrow="ALWAYS">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Text>
+               </children>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="7.0" left="10.0" top="7.0" />
+               </padding>
+            </HBox>
+            <VBox alignment="BOTTOM_CENTER" prefHeight="200.0" prefWidth="100.0" VBox.vgrow="ALWAYS">
+               <children>
+                  <HBox fx:id="help" alignment="CENTER_LEFT" onMouseClicked="#showabout" spacing="13.0" styleClass="hover_border">
+                     <children>
+                        <ImageView fitHeight="22.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@info-circle-solid.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets left="2.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <Text fill="#f23b52" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="hover_font" text="Help" HBox.hgrow="ALWAYS">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Text>
+                     </children>
+                     <padding>
+                        <Insets bottom="7.0" left="10.0" top="7.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox fx:id="exit" alignment="CENTER_LEFT" onMouseClicked="#Exit" spacing="13.0" styleClass="hover_border">
+                     <children>
+                        <ImageView fitHeight="22.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@sign-out-alt-solid.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets left="2.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <Text fill="#f23b52" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="hover_font" text="Exit" HBox.hgrow="ALWAYS">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Text>
+                     </children>
+                     <padding>
+                        <Insets bottom="7.0" left="10.0" top="7.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Quicksand; -fx-fill: #808D97; -fx-font-weight: bold; -fx-font-size: 13;" text="V 1.0.23">
+                           <HBox.margin>
+                              <Insets bottom="13.0" left="20.0" top="50.0" />
+                           </HBox.margin>
+                        </Text>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+      </VBox>
+   </left>
+</BorderPane>

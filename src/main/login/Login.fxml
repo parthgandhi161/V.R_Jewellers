@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="533.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.login.LoginC">
+   <left>
+      <ImageView fitHeight="533.0" fitWidth="353.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+         <image>
+            <Image url="@login.png" />
+         </image>
+         <BorderPane.margin>
+            <Insets left="-1.0" />
+         </BorderPane.margin>
+      </ImageView>
+   </left>
+   <center>
+      <AnchorPane fx:id="pane" maxWidth="450.0" prefHeight="533.0" prefWidth="450.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+         <children>
+            <TextField fx:id="uname" layoutX="137.0" layoutY="221.0" prefHeight="26.0" prefWidth="208.0" promptText="Username" />
+            <PasswordField fx:id="pass" layoutX="136.0" layoutY="282.0" prefHeight="26.0" prefWidth="208.0" promptText="Password" />
+            <JFXButton fx:id="login" buttonType="RAISED" layoutX="159.0" layoutY="369.0" onAction="#login" prefHeight="33.0" prefWidth="154.0" style="-fx-background-color: #F23B52;" text="Login" textFill="WHITE" />
+            <JFXButton fx:id="close" buttonType="RAISED" layoutX="159.0" layoutY="423.0" onAction="#close" prefHeight="33.0" prefWidth="154.0" ripplerFill="#f23b52" style="-fx-background-color: #F4F5F6; -fx-border-color: #F23B52; -fx-text-fill: #F23B52;" text="Close" textFill="#f23b52" />
+            <Label layoutX="193.0" layoutY="125.0" style="-fx-text-fill: #F23B52; -fx-font-family: Quicksand; -fx-font-size: 32; -fx-font-weight: Bold;" text="Login" textFill="#f23b52">
+               <font>
+                  <Font name="Futura Heavy BT" size="32.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="23.0" fitWidth="20.0" layoutX="105.0" layoutY="285.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@key-solid.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="23.0" fitWidth="20.0" layoutX="105.0" layoutY="223.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@user-solid.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="38.0" fitWidth="40.0" layoutX="218.0" layoutY="70.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@lock-solid.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="error" layoutX="117.0" layoutY="329.0" prefHeight="18.0" prefWidth="235.0" style="-fx-text-fill: #F23B52;" textFill="#f23b52">
+               <font>
+                  <Font name="Futura Medium BT" size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>
