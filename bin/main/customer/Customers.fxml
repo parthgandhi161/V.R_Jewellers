@@ -1,29 +1,92 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Label?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.layout.HBox?>
 
-
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="616.0" prefWidth="1216.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
-   <left>
-      <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: black;" BorderPane.alignment="CENTER" />
-   </left>
+<BorderPane fx:id="mainpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="616.0" prefWidth="1216.0" style="-fx-background-color: white;" stylesheets="@customer.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.customer.CustomerC">
    <top>
-      <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: black;" BorderPane.alignment="CENTER" />
+      <HBox prefHeight="50.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="600.0">
+               <children>
+                  <TextField fx:id="search" prefWidth="250.0" promptText="Search" style="-fx-background-color: transparent;">
+                     <HBox.margin>
+                        <Insets left="30.0" />
+                     </HBox.margin>
+                     <styleClass>
+                        <String fx:value="text_feild" />
+                        <String fx:value="text_feild_h" />
+                     </styleClass>
+                  </TextField>
+                  <JFXComboBox fx:id="combosearch" focusColor="#f23b52" labelFloat="true" prefHeight="25.0" prefWidth="185.0" promptText="Search by" styleClass="cursor_hand" unFocusColor="#5a6a77">
+                     <HBox.margin>
+                        <Insets bottom="3.0" left="20.0" />
+                     </HBox.margin>
+                  </JFXComboBox>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="616.0">
+               <children>
+                  <JFXButton fx:id="addnew" alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" onAction="#add" style="-fx-background-color: #F23B52; -fx-font-family: quicksand; -fx-font-weight: bold; -fx-text-fill: white;" styleClass="cursor_hand" text="Add New Customer">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <padding>
+                        <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                     </padding>
+                  </JFXButton>
+                  <HBox fx:id="refresh" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" onMouseClicked="#update" prefHeight="70.0" prefWidth="50.0">
+                     <children>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@sync-solid.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </ImageView>
+                     </children>
+                     <HBox.margin>
+                        <Insets left="30.0" right="50.0" />
+                     </HBox.margin>
+                     <styleClass>
+                        <String fx:value="icon_hover" />
+                        <String fx:value="cursor_hand" />
+                     </styleClass>
+                  </HBox>
+               </children>
+            </HBox>
+         </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+         <padding>
+            <Insets bottom="5.0" top="10.0" />
+         </padding>
+      </HBox>
    </top>
-   <right>
-      <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: black;" BorderPane.alignment="CENTER" />
-   </right>
-   <bottom>
-      <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: black;" BorderPane.alignment="CENTER" />
-   </bottom>
    <center>
-      <Label text="customer" BorderPane.alignment="CENTER">
-         <font>
-            <Font size="35.0" />
-         </font>
-      </Label>
+      <TableView fx:id="table" BorderPane.alignment="CENTER">
+        <columns>
+          <TableColumn fx:id="id" editable="false" prefWidth="90.0" resizable="false" sortable="false" text="Customer ID" />
+          <TableColumn fx:id="cname" editable="false" prefWidth="210.0" resizable="false" sortable="false" text="Customer Name" />
+            <TableColumn fx:id="sname" editable="false" prefWidth="210.0" resizable="false" sortable="false" text="Shop Name" />
+            <TableColumn fx:id="sadd" editable="false" prefWidth="370.0" resizable="false" sortable="false" text="Shop Address" />
+            <TableColumn fx:id="conno" editable="false" minWidth="6.0" prefWidth="137.0" resizable="false" sortable="false" text="Contact No." />
+            <TableColumn fx:id="ev" editable="false" prefWidth="150.0" resizable="false" sortable="false" text="Edit / View" />
+        </columns>
+         <BorderPane.margin>
+            <Insets bottom="20.0" left="20.0" right="10.0" top="10.0" />
+         </BorderPane.margin>
+      </TableView>
    </center>
 </BorderPane>
