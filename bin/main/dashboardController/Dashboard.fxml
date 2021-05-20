@@ -114,7 +114,7 @@
                   </Text>
                </children>
                <VBox.margin>
-                  <Insets top="15.0" />
+                  <Insets top="20.0" />
                </VBox.margin>
                <padding>
                   <Insets bottom="7.0" left="10.0" top="7.0" />
@@ -169,7 +169,7 @@
                   <Insets top="20.0" />
                </VBox.margin>
                <padding>
-                  <Insets bottom="7.0" left="10.0" top="7.0" />
+                  <Insets bottom="9.0" left="10.0" top="9.0" />
                </padding>
             </HBox>
             <HBox fx:id="products" alignment="CENTER_LEFT" layoutX="10.0" layoutY="236.0" onMouseClicked="#showproducts" spacing="13.0" styleClass="hover_border">

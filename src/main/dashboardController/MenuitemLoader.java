@@ -6,7 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.Pane;
 
 
-public class MenuitemLoader {
+public class MenuitemLoader {///VR_Jewellers/src/main/.fxml
 	
 	private Pane view;
 	public Pane getpage(String filename)

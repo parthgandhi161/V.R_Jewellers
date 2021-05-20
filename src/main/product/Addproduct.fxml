@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="mainpane" maxHeight="450.0" maxWidth="450.0" minHeight="380.0" minWidth="400.0" prefHeight="450.0" prefWidth="450.0" style="-fx-background-color: white;" stylesheets="@products.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+   <center>
+      <AnchorPane prefHeight="544.0" prefWidth="441.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox alignment="CENTER_LEFT" prefHeight="350.0" prefWidth="450.0">
+               <children>
+                  <Label fx:id="pname" style="-fx-font-family: quicksand; -fx-font-weight: bold; -fx-text-fill: #F23B52;" text="Product Name">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="80.0" top="15.0" />
+                     </VBox.margin>
+                  </Label>
+                  <TextField fx:id="productname" prefWidth="50.0" style="-fx-background-color: transparent;">
+                     <styleClass>
+                        <String fx:value="text_feild" />
+                        <String fx:value="text_feild_h" />
+                     </styleClass>
+                     <VBox.margin>
+                        <Insets left="80.0" right="80.0" top="5.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <Label fx:id="dtouch" style="-fx-font-family: quicksand; -fx-font-weight: bold; -fx-text-fill: #F23B52;" text="Default Touch">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="80.0" top="15.0" />
+                     </VBox.margin>
+                  </Label>
+                  <TextField fx:id="dtouch" prefWidth="50.0" style="-fx-background-color: transparent;">
+                     <styleClass>
+                        <String fx:value="text_feild" />
+                        <String fx:value="text_feild_h" />
+                     </styleClass>
+                     <VBox.margin>
+                        <Insets left="80.0" right="80.0" top="5.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <Label style="-fx-font-family: quicksand; -fx-font-weight: bold; -fx-text-fill: #F23B52;" text="Default Labour">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="80.0" top="15.0" />
+                     </VBox.margin>
+                  </Label>
+                  <TextField fx:id="dlabour" prefWidth="50.0" style="-fx-background-color: transparent;">
+                     <styleClass>
+                        <String fx:value="text_feild" />
+                        <String fx:value="text_feild_h" />
+                     </styleClass>
+                     <VBox.margin>
+                        <Insets left="80.0" right="80.0" top="5.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <Label fx:id="errorlabel" alignment="CENTER" prefHeight="17.0" prefWidth="476.0" style="-fx-font-family: quicksand; -fx-font-weight: bold;" textFill="#f23b52">
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin>
+                  </Label>
+                  <HBox alignment="CENTER" layoutX="10.0" layoutY="170.0" prefHeight="100.0" prefWidth="200.0" spacing="30.0">
+                     <children>
+                        <JFXButton fx:id="saveb" onAction="#add" prefWidth="90.0" style="-fx-background-color: #F23B52; -fx-border-color: #F23B52; -fx-border-width: 2; -fx-border-radius: 3; -fx-text-fill: white;" styleClass="cursor_hand" text="Save">
+                           <padding>
+                              <Insets bottom="8.0" left="25.0" right="25.0" top="8.0" />
+                           </padding>
+                        </JFXButton>
+                        <JFXButton fx:id="cancelb" onAction="#cancel" prefWidth="90.0" style="-fx-border-color: #F23B52; -fx-border-radius: 3; -fx-border-width: 2; -fx-text-fill: #F23B52; -fx-background-color: #F4F5F6;" styleClass="cursor_hand" text="Cancel">
+                           <padding>
+                              <Insets bottom="8.0" left="25.0" right="25.0" top="8.0" />
+                           </padding>
+                        </JFXButton>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="15.0" />
+                     </VBox.margin>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets top="20.0" />
+               </padding>
+            </VBox>
+         </children>
+      </AnchorPane>
+   </center>
+   <top>
+      <HBox alignment="CENTER" prefHeight="80.0" prefWidth="200.0" spacing="10.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@iconmonstr-product-3.png" />
+               </image>
+            </ImageView>
+            <Label style="-fx-font-family: quicksand; -fx-font-weight: bold;" text=" New Product">
+               <font>
+                  <Font size="25.0" />
+               </font>
+               <HBox.margin>
+                  <Insets top="2.0" />
+               </HBox.margin>
+            </Label>
+         </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+         <padding>
+            <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+         </padding>
+      </HBox>
+   </top>
+</BorderPane>
