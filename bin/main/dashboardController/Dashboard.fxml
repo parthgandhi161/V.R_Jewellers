@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
@@ -270,6 +272,45 @@
       </VBox>
    </left>
    <center>
-      <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+      <BorderPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+         <top>
+            <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="737.0">
+                     <children>
+                        <TextField />
+                        <JFXButton text="Select " />
+                     </children>
+                     <padding>
+                        <Insets left="50.0" />
+                     </padding>
+                  </HBox>
+                  <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="793.0">
+                     <children>
+                        <TextField />
+                        <JFXButton text="Edit" />
+                     </children>
+                     <HBox.margin>
+                        <Insets right="50.0" />
+                     </HBox.margin>
+                  </HBox>
+               </children>
+            </HBox>
+         </top>
+         <right>
+            <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER" />
+         </right>
+         <center>
+            <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox prefHeight="100.0" prefWidth="200.0" />
+                  <HBox layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="200.0" />
+                  <HBox layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="200.0" />
+                  <HBox layoutX="10.0" layoutY="110.0" prefHeight="100.0" prefWidth="200.0" />
+                  <HBox layoutX="10.0" layoutY="210.0" prefHeight="100.0" prefWidth="200.0" />
+                  <HBox layoutX="10.0" layoutY="310.0" prefHeight="100.0" prefWidth="200.0" />
+               </children>
+            </VBox>
+         </center></BorderPane>
    </center>
 </BorderPane>
