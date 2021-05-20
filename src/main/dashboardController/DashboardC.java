@@ -61,7 +61,7 @@ public class DashboardC implements Initializable {
     private ScheduledExecutorService executorservice;
 
 	
-	
+//////////////////////////////////////////////////////////////////////////////////////	
     
     
     
@@ -148,7 +148,7 @@ public class DashboardC implements Initializable {
 		products.setStyle(null);
 		help.setStyle(null);
 	}
-	public void showproducts(MouseEvent event)
+	public void showproducts(MouseEvent event) throws IOException
 	{
 		MenuitemLoader object = new MenuitemLoader();
 		Pane view = object.getpage("product/Products");

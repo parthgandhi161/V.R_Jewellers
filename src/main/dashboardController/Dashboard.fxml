@@ -210,7 +210,7 @@
                               <Insets left="2.0" />
                            </HBox.margin>
                         </ImageView>
-                        <Text fill="#f23b52" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="hover_font" text="Help" HBox.hgrow="ALWAYS">
+                        <Text fill="#f23b52" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="hover_font" text="About" HBox.hgrow="ALWAYS">
                            <HBox.margin>
                               <Insets />
                            </HBox.margin>

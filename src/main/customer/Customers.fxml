@@ -44,7 +44,7 @@
                         <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
                      </padding>
                   </JFXButton>
-                  <HBox fx:id="refresh" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" onMouseClicked="#update" prefHeight="70.0" prefWidth="50.0">
+                  <HBox fx:id="refresh" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="70.0" prefWidth="50.0">
                      <children>
                         <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -75,7 +75,7 @@
       </HBox>
    </top>
    <center>
-      <TableView fx:id="table" BorderPane.alignment="CENTER">
+      <TableView fx:id="table" onMouseClicked="#update" BorderPane.alignment="CENTER">
         <columns>
           <TableColumn fx:id="id" editable="false" prefWidth="90.0" resizable="false" sortable="false" text="Customer ID" />
           <TableColumn fx:id="cname" editable="false" prefWidth="210.0" resizable="false" sortable="false" text="Customer Name" />

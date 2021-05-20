@@ -339,7 +339,7 @@ public class CustomerC implements Initializable{
 			combosearch.getItems().add("Customer's ID");
 			combosearch.getItems().add("Customer's Name");
 			combosearch.getItems().add("Customer's Shop Name");
-			
+			cb="All";
 			System.out.println("done combo");
 			
 			combosearch.setOnAction(e -> cb=combosearch.getValue());

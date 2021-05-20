@@ -12,6 +12,8 @@ import com.jfoenix.controls.JFXComboBox;
 import main.DB;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -40,7 +42,7 @@ public class ProductsC implements Initializable{
     private URL location;
 
     @FXML
-    private BorderPane mainpane;
+    private BorderPane pane;
 
     @FXML
     private TextField search;
@@ -82,7 +84,7 @@ public class ProductsC implements Initializable{
     //add product
     
     
-    void add(ActionEvent event) {
+    public void add(ActionEvent event) {
 
     		try {
 			
@@ -93,7 +95,7 @@ public class ProductsC implements Initializable{
 			stage.setTitle("Add Product");			
 			stage.setScene(scene);
 			stage.initModality(Modality.WINDOW_MODAL);
-			stage.initOwner(mainpane.getScene().getWindow());
+			stage.initOwner(pane.getScene().getWindow());
 			stage.initStyle(StageStyle.UTILITY);
 			stage.show();
 			}
@@ -107,7 +109,7 @@ public class ProductsC implements Initializable{
     //table view
     
     
-    void update() {
+    public void update() {
     	
     	Connection conn = DB.dbconnect();
 		ObservableList<Product> list= FXCollections.observableArrayList();
@@ -133,12 +135,114 @@ public class ProductsC implements Initializable{
 	pname.setCellValueFactory(new PropertyValueFactory<Product, String>("pname"));
 	dtouch.setCellValueFactory(new PropertyValueFactory<Product, Float>("dtouch"));
 	dlabour.setCellValueFactory(new PropertyValueFactory<Product, Float>("dlabour"));
-
-    }
-
-    
-    
 	
+	
+/////////////////////////////////////////////////////////////////////////////////////
+	
+	
+		// Wrap the ObservableList in a FilteredList (initially display all data).
+		FilteredList<Product> filteredData = new FilteredList<>(list, b -> true);
+
+		// 2. Set the filter Predicate whenever the filter changes.
+
+
+		System.out.println(cb);
+		search.textProperty().addListener((observable, oldValue, newValue) -> {
+		filteredData.setPredicate(Product -> {
+		// If filter text is empty, display all persons.
+
+
+			if (newValue == null || newValue.isEmpty()) {
+				return true;
+			}
+
+			else
+			{
+				System.out.println(cb);	
+				
+// 	Compare first name and last name of every person with filter text.
+				if(cb.equals("All")) {
+
+					String lowerCaseFilter = newValue.toLowerCase();
+
+					if (String.valueOf(Product.getId()).toLowerCase().indexOf(lowerCaseFilter) != -1 ) {
+						return true; // Filter matches first name.
+					} else if (Product.getPname().toLowerCase().indexOf(lowerCaseFilter) != -1) {
+						return true; // Filter matches last name.
+					}
+					else if (String.valueOf(Product.getDtouch()).toLowerCase().indexOf(lowerCaseFilter)!=-1)
+						return true;
+					else if (String.valueOf(Product.getDlabour()).toLowerCase().indexOf(lowerCaseFilter)!=-1)
+						return true;
+					else  
+						return false; // Does not match.
+				}
+				
+				else if (cb.equals("Product's ID")) {
+					
+					String lowerCaseFilter = newValue.toLowerCase();
+					
+					if (String.valueOf(Product.getId()).toLowerCase().indexOf(lowerCaseFilter) != -1 ) {
+						return true; // Filter matches first name.
+					} 
+					else  
+						return false; // Does not match.
+					
+				}
+				
+				else if(cb.equals("Product's Name")) {
+					
+					String lowerCaseFilter = newValue.toLowerCase();
+					
+					if (String.valueOf(Product.getPname()).toLowerCase().indexOf(lowerCaseFilter)!=-1)
+						return true;
+					else  
+						return false; // Does not match.
+					
+				}
+				
+				else if(cb.equals("Product's Touch")) {
+					
+					String lowerCaseFilter = newValue.toLowerCase();
+					
+					if (String.valueOf(Product.getDtouch()).toLowerCase().indexOf(lowerCaseFilter)!=-1)
+						return true;
+					else  
+						return false; // Does not match.
+					
+				}
+				else if(cb.equals("Product's Labour")) {
+					
+					String lowerCaseFilter = newValue.toLowerCase();
+					
+					if (String.valueOf(Product.getDlabour()).toLowerCase().indexOf(lowerCaseFilter)!=-1)
+						return true;
+					else  
+						return false; // Does not match.
+					
+				}
+				
+			}
+			return false;
+			
+		});
+		});
+
+// 	3. Wrap the FilteredList in a SortedList. 
+		SortedList<Product> sortedData = new SortedList<>(filteredData);
+		
+// 	4. Bind the SortedList comparator to the TableView comparator.
+// 	  	Otherwise, sorting the TableView would have no effect.
+		sortedData.comparatorProperty().bind(table.comparatorProperty());
+		
+// 	5. Add sorted (and filtered) data to the table.
+		table.setItems(sortedData);
+		
+    	}
+    
+    
+    
+    
 //////////////////////////////////////////////////////////////////////////////
     
     
@@ -154,7 +258,7 @@ public class ProductsC implements Initializable{
 		combosearch.getItems().add("Product's Name");
 		combosearch.getItems().add("Product's Touch");
 		combosearch.getItems().add("Product's Labour");
-		
+		cb="All";
 		
 		combosearch.setOnAction(e -> cb=combosearch.getValue());
 	}

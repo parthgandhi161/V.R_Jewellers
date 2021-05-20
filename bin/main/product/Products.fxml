@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 
-<BorderPane fx:id="mainpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="616.0" prefWidth="1216.0" style="-fx-background-color: white;" stylesheets="@products.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="616.0" prefWidth="1216.0" style="-fx-background-color: white;" stylesheets="@products.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.product.ProductsC">
    <top>
       <HBox prefHeight="50.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
@@ -79,9 +79,9 @@
         <columns>
           <TableColumn fx:id="id" editable="false" prefWidth="100.0" resizable="false" sortable="false" text="Product ID" />
           <TableColumn fx:id="pname" editable="false" prefWidth="420.0" resizable="false" sortable="false" text="Product Name" />
-            <TableColumn fx:id="dtouch" editable="false" prefWidth="250.0" resizable="false" sortable="false" text="Default Touch" />
             <TableColumn fx:id="dlabour" editable="false" prefWidth="250.0" resizable="false" sortable="false" text="Default Labour" />
             <TableColumn fx:id="ev" editable="false" prefWidth="150.0" resizable="false" sortable="false" text="Edit / View" />
+            <TableColumn fx:id="dtouch" editable="false" prefWidth="250.0" resizable="false" sortable="false" text="Default Touch" />
         </columns>
          <BorderPane.margin>
             <Insets bottom="20.0" left="20.0" right="10.0" top="10.0" />

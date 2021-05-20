@@ -13,13 +13,13 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="mainpane" maxHeight="450.0" maxWidth="450.0" minHeight="380.0" minWidth="400.0" prefHeight="450.0" prefWidth="450.0" style="-fx-background-color: white;" stylesheets="@products.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane fx:id="mainpane" maxHeight="450.0" maxWidth="450.0" minHeight="380.0" minWidth="400.0" prefHeight="450.0" prefWidth="450.0" style="-fx-background-color: white;" stylesheets="@products.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.product.AddproductC">
    <center>
       <AnchorPane prefHeight="544.0" prefWidth="441.0" BorderPane.alignment="CENTER">
          <children>
             <VBox alignment="CENTER_LEFT" prefHeight="350.0" prefWidth="450.0">
                <children>
-                  <Label fx:id="pname" style="-fx-font-family: quicksand; -fx-font-weight: bold; -fx-text-fill: #F23B52;" text="Product Name">
+                  <Label style="-fx-font-family: quicksand; -fx-font-weight: bold; -fx-text-fill: #F23B52;" text="Product Name">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -36,7 +36,7 @@
                         <Insets left="80.0" right="80.0" top="5.0" />
                      </VBox.margin>
                   </TextField>
-                  <Label fx:id="dtouch" style="-fx-font-family: quicksand; -fx-font-weight: bold; -fx-text-fill: #F23B52;" text="Default Touch">
+                  <Label style="-fx-font-family: quicksand; -fx-font-weight: bold; -fx-text-fill: #F23B52;" text="Default Touch">
                      <font>
                         <Font size="14.0" />
                      </font>
